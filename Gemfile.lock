@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/thoughtbot/capybara-webkit
+  revision: bca84f9a577963d99c99e735690905c5afb744b3
+  specs:
+    capybara-webkit (0.13.0)
+      capybara (>= 2.0.1)
+      json
+
+GIT
   remote: https://github.com/jnicklas/capybara.git
   revision: b6e68c5e5e938eac4bf5de0a56b188dc9653c10e
   specs:
@@ -14,6 +22,7 @@ GEM
   remote: http://rubygems.org/
   specs:
     addressable (2.3.2)
+    awesome_print (1.0.2)
     builder (3.1.4)
     childprocess (0.3.6)
       ffi (~> 1.0, >= 1.0.6)
@@ -60,7 +69,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   capybara!
+  capybara-webkit!
   cucumber
   launchy
   rspec
