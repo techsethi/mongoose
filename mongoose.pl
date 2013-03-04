@@ -28,7 +28,7 @@ print LOG $return_val;
 close LOG;
 
 ## =========
-my $smtp = Net::SMTP->new("cmailer.indiatimes.com", Debug => 1 );
+my $smtp = Net::SMTP->new("smtp.gmail.com", Debug => 1 );
  
 $smtp->mail("pradeep.sethi\@indiatimes.co.in");
 $smtp->to("pradeep.sethi\@indiatimes.co.in");
