@@ -3,20 +3,23 @@ Given /^I am on Restaurant Home Page$/ do
 end
 
 When /^I enter "(.*?)" in keyword search box$/ do |search_term|
+    
   fill_in('searchname', :with => search_term)
+  debugger
 end
 
 When /^I click Find$/ do
+    debugger
   click_on('topsearchbtn')
 end
 
 Then /^I should see atleast (\d+) results with "(.*?)" as Primary cuisine$/ do |num_results, cuisine_name|
-
+    debugger
   results = page.all(:css, "div.desarea li.desstate", :visible => true)
-  # debugger
+   debugger
   cuisine_match_count = 0
   results.each  { | result |
-  cuisine_match_count += 1 if (result.text.match("Cuisine : #{cuisine_name}"))
+  cuisine_match_count += 1 if (result.text.match("Cuisine: #{cuisine_name}"))
     }
   
   cuisine_match_count.should be >= num_results.to_i
