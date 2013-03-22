@@ -8,7 +8,7 @@ Given(/^If I am logged in$/) do
 end
 
 Given(/^I click on link "(.*?)"$/) do |link_text|
-    click_link('link_text')
+    click_link("#{link_text}")
 end
 
 Then(/^I should be successfully logged out on this page$/) do 
@@ -24,49 +24,19 @@ end
 Then(/^I should be see "(.*?)"$/) do |item|
     case item
     when "email address label"
-      puts 'Well done!'
-    when "B"
-      puts 'Try harder!'
-    when "C"
-      puts 'You need help!!!'
+       page.find("div.label").text.should eql ("Email")
+    when "password label"
+       page.find("div.label").text.should eql ("Password")
+    when "email text box"
+      page.should have_css('input#login_username')
+    when "password text box"
+      page.should have_css('input#login_password')
     else
-      puts "You just making it up!"
+      # nothing
     end
 end
 
-Then(/^I should see "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^I enter "(.*?)" in textbox$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^I leave the "(.*?)" blank$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^I click "(.*?)" in the login popup$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
 Then(/^I should see validation message "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-Given(/^I enter "(.*?)" in textbox$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-Given(/^I leave the "(.*?)" blank$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-Given(/^I click "(.*?)" in the login popup$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-Given(/^I click "(.*?)"$/) do |arg1|
   pending # express the regexp above with the code you wish you had
 end
 
@@ -78,31 +48,7 @@ Given(/^I enter in "(.*?)" for Password text box$/) do |arg1|
   pending # express the regexp above with the code you wish you had
 end
 
-Then(/^I should see user name on home page with Hi Gagan$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Given(/^I click on "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
 Then(/^I should see facebook login pop window$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^I enter in "(.*?)" for Email text box$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^I enter in "(.*?)" for "(.*?)"$/) do |arg1, arg2|
-  pending # express the regexp above with the code you wish you had
-end
-
-Given(/^I click on "(.*?)" button$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-Given(/^I enter in "(.*?)" for "(.*?)"$/) do |arg1, arg2|
   pending # express the regexp above with the code you wish you had
 end
 
@@ -118,6 +64,3 @@ Given(/^I enter email address and click on submit button$/) do
   pending # express the regexp above with the code you wish you had
 end
 
-Then(/^I should see a message "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
