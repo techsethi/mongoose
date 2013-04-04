@@ -2,7 +2,7 @@ mongoose
 ========
 
 Web Acceptance Testing Framework used by Timescity
-=====
+----
 
 Steps to setup:
 
